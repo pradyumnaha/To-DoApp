@@ -1,0 +1,51 @@
+#wrapper{
+   width: 450px;
+}
+
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one 🙂       */
+    display: flex;
+    align-items: center;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+label {
+    color: #424242;
+    display: inline-block;
+}
+
+.authValidationMsg, .emailValidationMsg {
+    color: red;
+    display: inline-block;
+}
+
+.login-card {
+    border: none;
+    border-radius: 5px !important;
+    box-shadow: 1px 1px 6px 3px #adadad;
+}
+
+.login-card .card-header {
+    background-color: #0b425d;
+    color: white;
+    font-size: 26px;
+    padding: 10px;
+    text-align: center;
+}
+
+.login-card .btn-block {
+    background-color: #039be5;
+    color: white; 
+}
+
+.login-card .form-control {
+    font-size: 14px;
+}
+
+.login-card .forgot-password a{
+    color: grey;
+}

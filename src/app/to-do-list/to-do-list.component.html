@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <app-to-do-edit (toDoListCreated) = "toDoListAdded($event)"></app-to-do-edit>
+    <ul class="list-group">      
+      <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-primary" *ngFor="let item of listItems; let i = index" appBetterHighlight>
+        {{item.toDoTask}} ({{item.dateTodo}})
+        <!-- <button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button> -->
+        <button type="button" class="btn" data-toggle="modal" data-target="#deleteModal">
+          <i class="fas fa-trash" id="trash" data-toggle="tooltip" data-placement="bottom" title="Delete"></i>
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  Do you want to delete?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary" (click)="onDelete(i)" data-dismiss="modal">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>

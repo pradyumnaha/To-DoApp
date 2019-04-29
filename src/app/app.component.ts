@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { DataService } from './shared/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ToDoApp';
+  loggedIn: boolean = false;
+
+
+  constructor(private dataService: DataService){
+    this.loggedIn=this.dataService.getLoggedIn();
+    console.log(this.loggedIn);
+  }
 }

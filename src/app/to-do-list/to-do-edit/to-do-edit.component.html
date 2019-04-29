@@ -1,0 +1,35 @@
+<div class="row bg-white mr-0 ml-0 mb-4">
+    <div class="col-sm-12">
+        <h5 class="text-dark mt-2 text-center p-3">Welcome, {{this.userName}}!!! Have a great planning!!!</h5>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Date" bsDatepicker #toDoDate [bsConfig]="datePickerConfig"/>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="input-group  mb-3">
+            <input type="text" class="form-control" placeholder="To-Do Item" aria-label="To-Do Item" aria-describedby="basic-addon2" #toDooItemValue>
+            <div class="input-group-append">
+                <button class="btn add-btn"type="button" (click) = onAddClick(toDooItemValue,toDoDate) data-toggle="modal" data-target="#fillModal">Add</button>
+            </div>
+            <div class="modal fade" id="fillModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf = "!dataAndTaskFilled">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-body">
+                        Please fill in a valid date and task.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>                       
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
