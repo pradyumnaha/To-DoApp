@@ -12,6 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DirectAccessGuard } from './direct-access-guard.service';
 import { DataService } from './shared/data.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 const appRoutes: Routes = [
   {
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],

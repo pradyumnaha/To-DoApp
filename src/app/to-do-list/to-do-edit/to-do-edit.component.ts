@@ -20,7 +20,7 @@ export class ToDoEditComponent implements OnInit, OnDestroy {
     this.datePickerConfig = Object.assign({},
       {
         containerClass: 'theme-dark-blue',
-        minDate: new Date(new Date().getFullYear(),new Date().getMonth()+1,new Date().getDate())
+        minDate: new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate())
       });
       
   }

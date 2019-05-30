@@ -2,12 +2,12 @@ export class LoginService{
     private loginCredentials= [
         {
             userName: 'Pradyu',
-            email: 'pradyu@gmail.com',
+            email: 'xyz1@abc.com',
             password: '123'
         },
         {
             userName: 'Belli',
-            email: 'belli@gmail.com',
+            email: 'xyz2@abc.com',
             password: '1234'
         }
     ];

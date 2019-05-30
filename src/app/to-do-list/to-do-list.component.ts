@@ -1,11 +1,33 @@
 import { Component, OnInit } from '@angular/core';
+import { trigger, state, style, transition, animate } from'@angular/animations';
 import { Router } from '@angular/router';
 import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-to-do-list',
   templateUrl: './to-do-list.component.html',
-  styleUrls: ['./to-do-list.component.css']
+  styleUrls: ['./to-do-list.component.css'],
+  animations: [
+    trigger('list',[
+      state('in',style({
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100px)'
+        }),
+        animate(300)
+      ]),
+      transition('* => void', [
+        animate(300, style({
+          transform: 'translateX(100px)',
+          opacity: 0
+        }))
+      ])
+    ]),
+  ]
 })
 export class ToDoListComponent implements OnInit{
   listItems = [];
